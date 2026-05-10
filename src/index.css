@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0f172a;
+  color: white;
+  font-family: sans-serif;
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 18px;
+  }
+  h2 {
+    font-size: 22px !important;
+  }
+  button {
+    font-size: 12px !important;
+    padding: 6px 10px !important;
+  }
+}
