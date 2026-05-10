@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { platforms } from "./data/data"
 import Charts from "./components/Charts"
+import { FaUsers, FaImage, FaChartLine, FaHeart } from "react-icons/fa"
 
 function App() {
   const [activePlatform, setActivePlatform] = useState("instagram")
@@ -60,23 +61,41 @@ function App() {
           <p style={{ color: "#22c55e", fontSize: "13px", marginTop: "6px" }}>+5.2% this month</p>
         </div>
 
-        <div style={{ background: "#1e293b", padding: "20px", borderRadius: "10px" }}>
-          <p style={{ color: "#94a3b8", marginBottom: "8px" }}>Total Posts</p>
-          <h2 style={{ fontSize: "28px" }}>{data.overview.posts}</h2>
-          <p style={{ color: "#22c55e", fontSize: "13px", marginTop: "6px" }}>+12 this month</p>
-        </div>
+        <div style={{ background: "#1e293b", padding: "20px", borderRadius: "10px", borderLeft: "4px solid #6366f1" }}>
+  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+    <p style={{ color: "#94a3b8" }}>Total Followers</p>
+    <FaUsers style={{ color: "#6366f1", fontSize: "20px" }} />
+  </div>
+  <h2 style={{ fontSize: "28px" }}>{data.overview.followers.toLocaleString()}</h2>
+  <p style={{ color: "#22c55e", fontSize: "13px", marginTop: "6px" }}>+5.2% this month</p>
+</div>
 
-        <div style={{ background: "#1e293b", padding: "20px", borderRadius: "10px" }}>
-          <p style={{ color: "#94a3b8", marginBottom: "8px" }}>Engagement Rate</p>
-          <h2 style={{ fontSize: "28px" }}>{data.overview.engagement}%</h2>
-          <p style={{ color: "#ef4444", fontSize: "13px", marginTop: "6px" }}>-0.3% this month</p>
-        </div>
+<div style={{ background: "#1e293b", padding: "20px", borderRadius: "10px", borderLeft: "4px solid #22c55e" }}>
+  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+    <p style={{ color: "#94a3b8" }}>Total Posts</p>
+    <FaImage style={{ color: "#22c55e", fontSize: "20px" }} />
+  </div>
+  <h2 style={{ fontSize: "28px" }}>{data.overview.posts}</h2>
+  <p style={{ color: "#22c55e", fontSize: "13px", marginTop: "6px" }}>+12 this month</p>
+</div>
 
-        <div style={{ background: "#1e293b", padding: "20px", borderRadius: "10px" }}>
-          <p style={{ color: "#94a3b8", marginBottom: "8px" }}>Total Likes</p>
-          <h2 style={{ fontSize: "28px" }}>{data.overview.likes.toLocaleString()}</h2>
-          <p style={{ color: "#22c55e", fontSize: "13px", marginTop: "6px" }}>+8.1% this month</p>
-        </div>
+<div style={{ background: "#1e293b", padding: "20px", borderRadius: "10px", borderLeft: "4px solid #f59e0b" }}>
+  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+    <p style={{ color: "#94a3b8" }}>Engagement Rate</p>
+    <FaChartLine style={{ color: "#f59e0b", fontSize: "20px" }} />
+  </div>
+  <h2 style={{ fontSize: "28px" }}>{data.overview.engagement}%</h2>
+  <p style={{ color: "#ef4444", fontSize: "13px", marginTop: "6px" }}>-0.3% this month</p>
+</div>
+
+<div style={{ background: "#1e293b", padding: "20px", borderRadius: "10px", borderLeft: "4px solid #ef4444" }}>
+  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+    <p style={{ color: "#94a3b8" }}>Total Likes</p>
+    <FaHeart style={{ color: "#ef4444", fontSize: "20px" }} />
+  </div>
+  <h2 style={{ fontSize: "28px" }}>{data.overview.likes.toLocaleString()}</h2>
+  <p style={{ color: "#22c55e", fontSize: "13px", marginTop: "6px" }}>+8.1% this month</p>
+</div>
 
       </div>
 
