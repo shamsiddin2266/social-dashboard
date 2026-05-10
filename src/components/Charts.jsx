@@ -1,5 +1,6 @@
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts"
 import { ageGroups, topCountries } from "../data/data"
+import { heatmapData } from "../data/data"
 const colors = ["#6366f1", "#22c55e", "#f59e0b", "#ef4444"]
 
 function Charts({ followerGrowth, engagementData }) {
@@ -61,8 +62,43 @@ function Charts({ followerGrowth, engagementData }) {
         </div>
 
       </div>
-
+      <div style={{ background: "#1e293b", padding: "20px", borderRadius: "10px" }}>
+  <h3 style={{ marginBottom: "16px" }}>Best Posting Time</h3>
+  <div style={{ overflowX: "auto" }}>
+    <table style={{ width: "100%", borderCollapse: "collapse" }}>
+      <thead>
+        <tr>
+          <th style={{ padding: "8px", color: "#94a3b8", textAlign: "left" }}>Day</th>
+          {["6am", "9am", "12pm", "3pm", "6pm", "9pm"].map(time => (
+            <th key={time} style={{ padding: "8px", color: "#94a3b8", textAlign: "center" }}>{time}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {heatmapData.map((row) => (
+          <tr key={row.day}>
+            <td style={{ padding: "8px", color: "#94a3b8" }}>{row.day}</td>
+            {["6am", "9am", "12pm", "3pm", "6pm", "9pm"].map(time => (
+              <td key={time} style={{ padding: "8px", textAlign: "center" }}>
+               <div className="heatmap-cell" style={{
+                background: `rgba(99, 102, 241, ${row[time] / 100})`,
+                borderRadius: "6px",
+                padding: "10px",
+                color: row[time] > 50 ? "white" : "#94a3b8",
+                fontSize: "12px"
+}}>
+                  {row[time]}%
+                </div>
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
     </div>
+    
   )
 }
 

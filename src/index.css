@@ -21,3 +21,10 @@ body {
     padding: 6px 10px !important;
   }
 }
+.heatmap-cell:hover {
+  transform: scale(1.15);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  background-color: lightgreen !important;
+  color: black !important;
+}

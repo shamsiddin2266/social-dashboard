@@ -70,7 +70,15 @@ export const ageGroups = [
   { name: "35-44", value: 15 },
   { name: "45+", value: 10 },
 ]
-
+export const heatmapData = [
+  { day: "Mon", "6am": 20, "9am": 45, "12pm": 60, "3pm": 55, "6pm": 80, "9pm": 40 },
+  { day: "Tue", "6am": 15, "9am": 50, "12pm": 65, "3pm": 70, "6pm": 75, "9pm": 35 },
+  { day: "Wed", "6am": 25, "9am": 40, "12pm": 70, "3pm": 60, "6pm": 90, "9pm": 45 },
+  { day: "Thu", "6am": 10, "9am": 55, "12pm": 55, "3pm": 65, "6pm": 85, "9pm": 50 },
+  { day: "Fri", "6am": 30, "9am": 60, "12pm": 75, "3pm": 80, "6pm": 95, "9pm": 60 },
+  { day: "Sat", "6am": 40, "9am": 70, "12pm": 85, "3pm": 90, "6pm": 70, "9pm": 65 },
+  { day: "Sun", "6am": 35, "9am": 65, "12pm": 80, "3pm": 75, "6pm": 65, "9pm": 55 },
+]
 export const topCountries = [
   { name: "Uzbekistan", value: 40 },
   { name: "Russia", value: 25 },
